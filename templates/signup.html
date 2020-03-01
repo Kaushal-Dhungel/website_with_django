@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>sign up</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<style>
+body	{
+		margin:0;
+		padding:0;
+		background:url(signup..jpg);
+		background-size:cover;
+		}
+.signup
+        {
+		color:red;
+		top:;
+		left:24%;
+		
+		}
+		#c {
+		border:none;
+		height: 30px;
+		width:160px;
+		background:red;
+		color:white;
+		border-radius: 9px;
+		font-size:20px;
+		}
+		
+    #h,#b,#d,#e,#f{
+        height: 25px;
+        width:260px;
+        color:red;
+        font-size:18px;
+        
+    }
+    #a{
+        color: red;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    #g,#s{
+          height: 32px;
+        width:260px;
+        color:red;
+        font-size:18px;
+      
+        
+    }
+</style>
+
+<hr/>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+<center>
+<div class="signup">
+<h1><u> Sign Up Here </u></h1>
+<form action="register" method="POST">
+   {% csrf_token %}
+    <b>Name <br> <input type ="text" name="username" id="b" autocomplete="off"  required />  <br/> <br/>
+   
+Phone <br>
+<input type="number" name="phone" id="h"  required maxlength="10" autocomplete="off" /><br><br>
+
+Email <br> <input type ="text" name="email" id="b" autocomplete="off"  required />  <br/> <br/>
+Blood Group <br>
+   <select id="s" name="bgroup"  required >
+    <option>A+</option>
+    <option>B+</option>
+    <option>AB+</option>
+    <option>O+</option>
+    <option>A-</option>
+    <option>B-</option>
+    <option>AB-</option>
+    <option>O-</option>
+</select> <br> <br>
+Location <br>
+<input type ="text" name="location" id="d" autocomplete="off" required /> <br> <br>
+
+Password <br>
+        
+<input type="password" name="password1" id="f" required /> <br /> <br/>
+
+Confirm Password <br>
+<input type="password" name="password2" id="f" required /> <br /> </b>
+ <br />
+<input type ="submit" name="submit" id="c" value ="sign up" /> <br /> <br/>
+    <b>Already have an account? </b> <br /> <br>
+ <a href="#" id="a">Login</a>
+ <br><br>
+
+
+</form>
+</div>
+
+<div class = "messages">
+    {% for message in messages %}
+    <h2> {{message}} </h2>
+    {% endfor %}
+</div>
+
+
+
+</center>
+
+
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<html>
+    
+    <head>
+        
+       <style>
+	   .picture{
+		   background:url('blooddonating.jpg');
+		   background-size:cover;
+            
+	   }
+	   
+	   
+	   
+           .search{
+			   width:600px;
+		       height:360px;
+			   padding-top:10%;
+               color:white;
+               font-weight: bold;
+               
+			   background: rgba(0,0,0,0.5);
+               font-family:cursive;
+               font-size: 18px;
+		   }
+		   
+           .first{
+			  
+			   padding-top:40px;
+               color:red;
+           }
+           #b,#c{
+               height:35px;
+               width:160px;
+               color: red;
+               font-size: 17px;
+           }
+           #search{
+               color:white;
+               font-size:18px;
+               height: 30px;
+               width:80px;
+               background-color: red;
+             border-color: red;
+            
+           }
+           
+        </style> 
+        
+        
+        
+        
+    </head>
+    
+    
+    <body>
+    
+    
+    
+   
+    
+      {% if user.is_authenticated %}
+    
+    
+    
+    
+    
+    
+	<div class="picture">
+       
+        <center>
+        <h1 class="first">Search Here</h1>
+        
+        <div class="search">
+       <form action="" method = "post" autocomplete="off"> 
+               
+            Blood Group <br>
+   <select id="b" name="bgroup" required >
+    <option>A+</option>
+    <option>B+</option>
+    <option>AB+</option>
+    <option>O+</option>
+    <option>A-</option>
+    <option>B-</option>
+    <option>AB-</option>
+    <option>O-</option>
+</select> <br> <br>
+       
+       Location <br>
+       <input type="text" id="c" name="address" list="datalist1" required>
+       <datalist id="datalist1">
+           <option value="Jhapa">
+           <option value="Illam">
+           <option value="Morang">
+           <option value="Kathmandu">
+           <option value="Kaski">
+           <option value="Sunsari">
+           <option value="Chitwan">
+           <option value="Kapilbastu">
+       </datalist>
+       <br> <br>
+       <input type="submit" id="search" name="bsearch">
+            </form>
+       
+        </div>
+        
+        </center>
+        <br><br><br><br><br>
+		</div>
+		
+		
+		
+		{% else %}
+   
+    <div class = "unlogged">
+        
+        <center>
+      Welcome. <br>This website is a databse of blood donors.<br>
+      If you are eligible and ready to donate blood you can join us.<br>
+      We will maintain your privacy. 
+      </center>
+        
+        
+    </div>
+    
+   {% endif %}
+   
+   
+    </body>
+   
+    
+</html>

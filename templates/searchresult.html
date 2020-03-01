@@ -1,0 +1,41 @@
+<html>
+    
+    <body>
+        
+        <style>
+            
+            .result{
+                font-size: 18px;
+                height: 200px;
+                width: 400px;
+                color:red;
+                
+            }
+        
+            h1{
+                color:red;
+            }
+        
+        </style>
+         <center>
+         <h1>Search Successful. Your Results:- </h1>
+    <div class="result">
+        <hr>
+         {%for k in srch %}
+         <hr>
+        <br>
+       Name:- {{ k.user.first_name }}<br>
+       
+       Phone:- {{ k.user.username }} <br>
+       Email:- {{ k.user.email }} <br>
+       Address:- {{ k.location }} <br>
+       Blood Group:- {{ k.b_group }} <br>
+       <hr>
+       {% endfor %}
+    <hr>
+        
+    </div>
+        </center>
+    </body>
+    
+</html>

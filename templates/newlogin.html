@@ -1,0 +1,20 @@
+<html>
+    <head>
+        
+    </head>
+
+<body>
+    {% block content %}
+    <form method="post" action ="newlogin">
+        
+        {% csrf_token %}
+        
+        <div>
+            
+            {{ form.as_p }}
+        </div>
+        <button type ="submit" >submit</button>
+    </form>
+    {% endblock %}
+</body>        
+</html>

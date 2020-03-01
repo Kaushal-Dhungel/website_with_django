@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login</title>
+<style>
+		body{
+		background : url("art2..jpg");
+		background-size: cover;
+		}
+		.login{
+		width:400px;
+		height:450px;
+		color:red;
+		top:20%;
+		left:36%;
+    }
+		#c {
+		border:none;
+		height: 30px;
+		width:150px;
+		background:red;
+		color:white;
+		border-radius: 9px;
+		font-size:20px;
+		}
+		
+		#forget{
+		  font-size: 20px;
+            color: red;
+		 }
+    #b,#d{
+        height: 25px;
+        width: 160px;
+        color:red;
+        font-size:17px;
+    }
+</style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+<center> 
+<div class=" login">
+<h1> <u> Log In</u></h1>
+<form action="login" method="post">
+{% csrf_token %}
+<br> 
+<b> Phone/username </b> <br>
+ <input type="text" name="phone" id="b"> <br />
+<br /> 
+<b> Password: </b> <br>
+
+ <input type ="password" name="password" id="d" > <br> <br>
+ <input type="submit" name ="submit" id="c" value="Log In"> <br> <br>
+ <a id="forget" href="#">Forget Password</a>
+ </form>
+ </div>
+ </center>
+ 
+ 
+ <div class = "messages">
+    {% for message in messages %}
+    <h2> {{message}} </h2>
+    {% endfor %}
+</div>
+
+ 
+</body>
+
+</html>

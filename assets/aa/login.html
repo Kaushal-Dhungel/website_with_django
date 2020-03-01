@@ -1,0 +1,24 @@
+<html>
+
+<body>
+<form action="login" method="POST">
+{% csrf_token %}
+<b>
+<input type ="text" name="UN" placeholder="User Name" required />  <br/> <br/>
+
+
+
+
+<input type="password" name="P"placeholder="Password" required /> <br /> <br/></b>
+
+<input type ="submit" id="c" value ="sign up" /> <br /> <br/>
+    </form>
+    <div>
+         
+        {% for message in messages %}
+        <h3> {{ message }}</h3>
+        {% endfor %}
+    
+    </div>
+    </body>
+</html>

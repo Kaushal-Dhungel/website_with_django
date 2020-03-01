@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>My First web project</title>
+<style>
+body	{
+		margin:0;
+		padding:0;
+    background-image:  url({% static "signup.jpg" %} );
+		background-size:cover;
+		}
+.signup
+        {
+	    width:600px;
+		height:560px;
+		background: rgba(0,0,0,0.2);
+		color:#000000;
+		top:5%;
+		left:24%;
+		position:absolute;
+		transform:translate(-50%, _50%);
+		box-sizing:border-box;
+		}
+		#c {
+		border:none;
+		height: 40px;
+		width:200px;
+		background:green;
+		color:black;
+		border-radius: 9px;
+		font-size:20px;
+		}
+		#c:hover
+		{
+		cursor:pointer;
+		background:yellow;
+		transition:1s;
+		}
+		#problem {
+		text-decoration:none;
+		  color:black;
+		  font-size:20px;
+		          }
+		 #problem:hover{
+		   text-decoration: bold;
+		   color:white;
+		   }
+
+</style>
+
+<hr/>
+</head>
+
+<body>
+<center>
+<div class="signup">
+
+<h1><u> Sign Up Here </u></h1>
+<form action="register" method="POST">
+{% csrf_token %}
+<b>  <input type ="text" name="FN" placeholder="First Name" required />  <br/> <br/>
+<input type ="text" name="UN" placeholder="User Name" required />  <br/> <br/>
+<input type ="text" name="LN" placeholder="Last Name" required /> <br/> <br/>
+
+
+<input type="text" name="E" placeholder="Email(email@kaushal.com)" required /> <br /> <br/>
+<input type="password" name="p1"placeholder="Password" required /> <br /> <br/></b>
+<input type="password" name="p2" placeholder="retype password" required /> <br /> <br/>
+<input type ="submit" id="c" value ="sign up" /> <br /> <br/>
+ <b>Already have an account: </b> <br />
+ <a href="login">Login</a> <br /> <br />
+ <a id="problem" href ="#"> <b>Any Problem ??</b> </a> <br /> <br />
+
+
+</form>
+
+<div>
+    {% for message in messages %}
+    <h2> {{message}} </h2>
+    {% endfor %}
+</div>
+
+</div>
+
+
+</center>
+
+
+
+</body>
+</html>
